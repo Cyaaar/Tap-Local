@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>TapLocal | Tarjetas NFC para negocios locales</title>
+<meta name="description" content="Tarjetas NFC personalizadas para reseñas de Google e Instagram. Configuradas, probadas y listas para tu negocio.">
+<style>
+:root{--ink:#101827;--muted:#667085;--paper:#f7f8fc;--white:#fff;--purple:#6941f5;--mint:#b8f4d7;--line:#e7eaf1;--pink:#ffdfeb;--blue:#eaf0ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;padding:23px 0;gap:20px}.brand{font-size:1.42rem;font-weight:950;letter-spacing:-.07em}.brand span{color:var(--purple)}.navlinks{display:flex;gap:24px;color:#50596b;font-size:.92rem}.navcta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;background:var(--ink);color:#fff;font-weight:800;font-size:.93rem;box-shadow:0 8px 18px #10182712;transition:transform .18s ease,box-shadow .18s ease}.btn:hover,.navcta:hover{transform:translateY(-2px);box-shadow:0 12px 26px #1018271c}
+.hero{padding:70px 0 82px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:52px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#eeeaff;color:#4c36bc;padding:8px 12px;border-radius:999px;font-size:.8rem;font-weight:800}.dot{width:7px;height:7px;background:var(--purple);border-radius:50%}h1{font-size:clamp(2.7rem,6vw,5rem);line-height:.99;letter-spacing:-.075em;margin:20px 0}.gradient{color:var(--purple)}.hero p{font-size:1.1rem;color:#626b7c;max-width:560px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.tiny{font-size:.82rem;color:var(--muted);margin-top:16px}
+.heroart{position:relative;min-height:420px;border-radius:36px;background:linear-gradient(140deg,#ded7ff 0%,#e7eaff 45%,#d7f8e8 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 28px 70px #5b4bc31a}.blob{position:absolute;width:250px;height:250px;border-radius:50%;background:#fff8;right:-55px;top:-70px}.spark{position:absolute;font-size:2rem}.spark.one{left:12%;top:16%}.spark.two{right:13%;bottom:15%}.mockcard{position:relative;width:238px;height:310px;background:#fff;border:1px solid #ffffffd9;border-radius:28px;box-shadow:0 32px 70px #25204730;transform:rotate(-6deg);padding:23px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}.mocklogo{font-weight:900;letter-spacing:-.05em}.nfc{width:94px;height:94px;border:2px solid #dfe3ed;border-radius:50%;display:grid;place-items:center;background:#fafaff}.mockcard strong{font-size:1.15rem;text-align:center;line-height:1.15}.mockcard small{color:#7b8496}.tap{background:var(--purple);color:white;border-radius:999px;padding:9px 15px;font-size:.75rem;font-weight:800}
+.section{padding:82px 0}.section.white{background:#fff}.sectionhead{max-width:650px;margin-bottom:32px}.kicker{text-transform:uppercase;font-size:.76rem;font-weight:900;letter-spacing:.13em;color:var(--purple)}h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.06em;line-height:1.05;margin:10px 0 14px}.sectionhead p{color:var(--muted);font-size:1.04rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:#fff;border:1px solid var(--line);border-radius:26px;padding:19px;display:flex;flex-direction:column;min-width:0;box-shadow:0 12px 32px #17233d08;transition:transform .2s ease,box-shadow .2s ease}.service:hover{transform:translateY(-4px);box-shadow:0 22px 45px #17233d10}.service.featured{border:2px solid var(--purple);box-shadow:0 18px 46px #7957ff16}
+.photo-art{background:#f1f2f6;display:flex;align-items:center;justify-content:center;padding:14px}
+.photo-art img{display:block;width:100%;height:100%;max-height:225px;object-fit:contain;border-radius:12px}
+.photo-art .photo-credit{position:absolute;bottom:5px;right:8px;background:#ffffffdf;color:#5b6475;padding:3px 6px;border-radius:5px;font-size:.62rem}
+.cards-photo img{object-fit:cover}
+\n.product-art{height:225px;border-radius:17px;display:grid;place-items:center;overflow:hidden;position:relative;margin-bottom:20px}.art-purple{background:#eeeaff}.art-green{background:#dcf8eb}.art-pink{background:#ffe7ef}.tag{position:absolute;top:12px;left:12px;background:#fff;border-radius:999px;padding:6px 10px;font-size:.72rem;font-weight:850}.product-card{background:#fff;width:125px;height:160px;border-radius:15px;box-shadow:0 15px 30px #25204720;display:flex;flex-direction:column;align-items:center;justify-content:space-around;transform:rotate(-5deg);padding:12px}.product-card .mini{font-weight:900;font-size:.8rem}.product-card .ring{width:48px;height:48px;border:2px solid #dce1ec;border-radius:50%;display:grid;place-items:center}.product-card b{font-size:.8rem;text-align:center;line-height:1.15}.stand{position:relative;width:130px;height:155px;display:flex;flex-direction:column;align-items:center;filter:drop-shadow(0 15px 15px #25204715)}.stand .face{z-index:2;width:115px;height:120px;background:#fff;border:1px solid #e6e7ee;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:12px;transform:perspective(400px) rotateY(-8deg)}.stand .base{width:130px;height:22px;background:#d8dce6;border-radius:5px 5px 12px 12px;margin-top:-2px}.social{width:135px;height:164px;background:#fff;border-radius:24px;box-shadow:0 15px 30px #25204720;display:flex;flex-direction:column;align-items:center;justify-content:space-around;transform:rotate(5deg);padding:15px}.igicon{width:54px;height:54px;border-radius:17px;background:linear-gradient(135deg,#ffd776,#ff5b8d,#8557ff);display:grid;place-items:center;color:white;font-size:1.8rem}.social b{text-align:center;line-height:1.1}.social small{color:var(--muted)}.service h3{font-size:1.35rem;letter-spacing:-.04em;margin:0 0 8px}.desc{color:var(--muted);font-size:.94rem;min-height:68px}.price{font-size:2.2rem;letter-spacing:-.06em;font-weight:900;margin:12px 0 2px}.price span{font-size:.82rem;letter-spacing:0;color:var(--muted);font-weight:600}.includes{padding:0;list-style:none;margin:14px 0 20px;display:grid;gap:9px;font-size:.9rem}.includes li:before{content:"✓";color:#16a36a;font-weight:900;margin-right:9px}.service .btn{margin-top:auto;width:100%;cursor:pointer;border:0}.service .btn.purple{background:var(--purple)}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.benefit{background:var(--paper);border:1px solid #edf0f6;border-radius:22px;padding:24px;transition:transform .2s ease}.benefit:hover{transform:translateY(-3px)}.benefit .ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#e9e4ff;font-size:1.25rem;margin-bottom:15px}.benefit h3{margin:0 0 7px;font-size:1.05rem}.benefit p{color:var(--muted);font-size:.9rem;margin:0}
+.how{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}.steps{display:grid;gap:15px}.step{display:flex;gap:15px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:18px}.num{flex:0 0 38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900}.step h3{margin:0 0 4px;font-size:1rem}.step p{margin:0;color:var(--muted);font-size:.9rem}
+.banner{background:radial-gradient(circle at 90% 5%,#44317f 0,transparent 34%),var(--ink);color:#fff;border-radius:30px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:24px}.banner h2{max-width:580px;margin:8px 0}.banner p{color:#c4cada;max-width:580px}.banner .btn{background:var(--mint);color:#10251b;white-space:nowrap}.banner .btn:hover{background:#d2ffe8}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq article{background:#fff;border:1px solid var(--line);padding:20px;border-radius:18px}.faq h3{font-size:1rem;margin:0 0 8px}.faq p{margin:0;color:var(--muted);font-size:.92rem}
+footer{padding:36px 0;color:var(--muted);font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding:45px 0 55px;gap:28px}.heroart{min-height:340px}.cards{grid-template-columns:1fr 1fr}.service:last-child{grid-column:1/-1}.benefits{grid-template-columns:1fr 1fr}.how{grid-template-columns:1fr;gap:24px}.navlinks{display:none}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.service:last-child{grid-column:auto}.section{padding:54px 0}.hero{padding-top:32px}.heroart{min-height:310px}.benefits{grid-template-columns:1fr 1fr}.banner{padding:27px;align-items:flex-start;flex-direction:column}.faq{grid-template-columns:1fr}.navcta{padding:10px 13px;font-size:.82rem}.desc{min-height:0}}
+
+.trust-strip{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.trust-strip span{font-size:.77rem;font-weight:750;color:#5c6576;background:#fff;border:1px solid var(--line);padding:8px 11px;border-radius:999px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}.banner .instagram-button{background:#fff;color:var(--ink)}
+.photo-art .photo-credit{font-size:.64rem}
+@media(max-width:560px){.trust-strip{gap:7px}.trust-strip span{font-size:.7rem}.contact-actions{width:100%}.contact-actions .btn{flex:1}.hero{gap:25px}.section{padding:60px 0}}
+\n</style>
+</head>
+<body>
+<header class="wrap">
+  <nav>
+    <a class="brand" href="#">tap<span>local.</span></a>
+    <div class="navlinks"><a href="#servicios">Servicios</a><a href="#ventajas">Ventajas</a><a href="#como-funciona">Cómo funciona</a></div>
+    <a class="navcta" href="#contacto">Quiero la mía ↗</a>
+  </nav>
+</header>
+<main>
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Tecnología sencilla para negocios locales</div>
+    <h1>Un toque.<br>Más fácil que <span class="gradient">nunca.</span></h1>
+    <p>Tarjetas NFC configuradas para que tus clientes lleguen a tus reseñas de Google o a tu Instagram con solo acercar el móvil. Te las entregamos listas para usar.</p>
+    <div class="actions"><a class="btn" href="#servicios">Ver servicios y precios ↘</a><a class="btn secondary" href="#como-funciona">Cómo funciona</a></div>
+    <div class="tiny">✓ Configuración incluida &nbsp; ✓ Prueba antes de entregar &nbsp; ✓ Sin cuotas mensuales</div>
+    <div class="trust-strip"><span>📍 Negocios locales</span><span>⚡ Fácil de usar</span><span>🔒 Sin cuotas recurrentes</span></div>
+  </div>
+  <div class="heroart" aria-label="Ilustración de una tarjeta NFC">
+    <div class="blob"></div><span class="spark one">✦</span><span class="spark two">✧</span>
+    <div class="mockcard"><div class="mocklogo">taplocal.</div><div class="nfc"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true"><path d="M17 18c-7 7-7 17 0 24M24 23c-4 4-4 10 0 14M43 18c7 7 7 17 0 24M36 23c4 4 4 10 0 14" stroke="#7957ff" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="30" r="4" fill="#7957ff"/></svg></div><strong>Acerca el móvil.<br>Listo.</strong><small>Tu negocio, a un toque</small><div class="tap">NFC · CONFIGURADA</div></div>
+  </div>
+</section>
+
+<section class="section white" id="servicios">
+  <div class="wrap">
+    <div class="sectionhead"><div class="kicker">Servicios y precios</div><h2>Elige la opción que encaja contigo.</h2><p>Precios claros, configuración incluida y cada tarjeta comprobada antes de entregártela.</p></div>
+    <div class="cards">
+      <article class="service featured">
+        <div class="product-art photo-art"><span class="tag">Más profesional</span><img src="https://montestap.com/cdn/shop/files/Stand_NFC_QR_MontesTAP_Negro.png?v=1773332139&width=900" alt="Ejemplo real de soporte NFC para reseñas de Google" loading="lazy"><span class="photo-credit">Foto de referencia: MontesTAP</span></div>
+        <h3>Google Reviews · con soporte</h3><p class="desc">Una placa de mostrador para que tus clientes encuentren fácilmente el enlace de reseñas de tu negocio.</p>
+        <div class="price">25 € <span>/ unidad</span></div>
+        <ul class="includes"><li>Tarjeta NFC con soporte</li><li>Enlace de reseñas configurado</li><li>Prueba de funcionamiento</li><li>Lista para colocar en el mostrador</li></ul>
+        <a class="btn purple order" href="#contacto" data-service="Google Reviews con soporte — 25 €">Me interesa</a>
+      </article>
+      <article class="service">
+        <div class="product-art photo-art cards-photo"><span class="tag">Pack ahorro</span><img src="https://cinquo.io/images/landings/nfc-review-devices/nfc-card-lady-dumpling.jpg" alt="Ejemplo real de tarjetas NFC personalizadas para reseñas" loading="lazy"><span class="photo-credit">Foto de referencia: Cinquo</span></div>
+        <h3>Google Reviews · 2 tarjetas</h3><p class="desc">Dos tarjetas sin soporte, perfectas para poner una en caja y otra en otra zona del local.</p>
+        <div class="price">20 € <span>/ pack de 2</span></div>
+        <ul class="includes"><li>2 tarjetas NFC</li><li>Las dos configuradas para tu negocio</li><li>Enlace de reseñas comprobado</li><li>Sin cuotas mensuales</li></ul>
+        <a class="btn order" href="#contacto" data-service="Pack de 2 tarjetas Google Reviews sin soporte — 20 €">Me interesa</a>
+      </article>
+      <article class="service">
+        <div class="product-art photo-art"><span class="tag">Haz crecer tu perfil</span><img src="https://montestap.com/cdn/shop/files/Stand_Instagram_NFC_y_QR.png?v=1744212942&width=900" alt="Ejemplo real de soporte NFC para Instagram" loading="lazy"><span class="photo-credit">Foto de referencia: MontesTAP</span></div>
+        <h3>Instagram · tarjeta NFC</h3><p class="desc">Una tarjeta para llevar a tus clientes directamente al perfil de Instagram de tu negocio.</p>
+        <div class="price">12 € <span>/ unidad</span></div>
+        <ul class="includes"><li>1 tarjeta NFC</li><li>Enlace a tu perfil configurado</li><li>Prueba de funcionamiento</li><li>Lista para usar</li></ul>
+        <a class="btn order" href="#contacto" data-service="Tarjeta NFC para Instagram — 12 €">Me interesa</a>
+      </article>
+    </div>
+    <p class="tiny">Las tarjetas NFC abren el enlace configurado; no garantizan reseñas, seguidores ni resultados concretos. El cliente decide libremente si deja una opinión. Las fotografías son ejemplos de productos de terceros y deben sustituirse por fotos propias o autorizadas antes de publicar la web comercial.</p>
+  </div>
+</section>
+
+<section class="section" id="ventajas">
+  <div class="wrap">
+    <div class="sectionhead"><div class="kicker">¿Por qué TapLocal?</div><h2>Pequeños detalles que hacen la vida más fácil.</h2><p>Una forma sencilla de conectar el mostrador físico de tu negocio con tus canales digitales.</p></div>
+    <div class="benefits">
+      <article class="benefit"><div class="ico">📲</div><h3>Un toque y listo</h3><p>El móvil abre el enlace configurado sin tener que buscar el perfil manualmente.</p></article>
+      <article class="benefit"><div class="ico">🛠️</div><h3>Lo configuramos por ti</h3><p>Nos facilitas el enlace correcto y te entregamos la tarjeta configurada y probada.</p></article>
+      <article class="benefit"><div class="ico">🏪</div><h3>Hecho para negocios locales</h3><p>Ideal para peluquerías, cafeterías, tiendas, talleres y profesionales.</p></article>
+      <article class="benefit"><div class="ico">💳</div><h3>Sin suscripciones</h3><p>Pagas por el producto y la configuración; no hay cuota mensual de TapLocal.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="como-funciona">
+  <div class="wrap how">
+    <div class="sectionhead"><div class="kicker">Así de sencillo</div><h2>Tu tarjeta, lista en tres pasos.</h2><p>No necesitas saber de tecnología ni programar nada.</p></div>
+    <div class="steps">
+      <article class="step"><div class="num">1</div><div><h3>Nos pasas tu enlace</h3><p>El enlace de reseñas de Google o el perfil de Instagram de tu negocio.</p></div></article>
+      <article class="step"><div class="num">2</div><div><h3>La configuramos y probamos</h3><p>Programamos la tarjeta y comprobamos que abre el destino correcto.</p></div></article>
+      <article class="step"><div class="num">3</div><div><h3>La colocas y la usas</h3><p>La dejas visible en tu negocio. Tus clientes acercan el móvil compatible y acceden al enlace.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="banner" id="contacto"><div><div class="kicker" style="color:var(--mint)">¿Lo preparamos?</div><h2>Tu negocio, a un toque de distancia.</h2><p>Cuéntanos qué opción te interesa y te ayudamos a dejarla configurada para tu negocio.</p></div><div class="contact-actions"><a class="btn" id="whatsappButton" href="https://wa.me/34651599074?text=Hola%2C%20me%20interesan%20las%20tarjetas%20NFC" target="_blank" rel="noopener">WhatsApp · +34 651 599 074 ↗</a><a class="btn instagram-button" id="instagramButton" href="https://www.instagram.com/taplocal_denia/" target="_blank" rel="noopener">Instagram · @taplocal_denia ↗</a></div></div>
+    <div class="faq" style="margin-top:24px">
+      <article><h3>¿Funciona con todos los móviles?</h3><p>La mayoría de móviles modernos tienen NFC, aunque la compatibilidad y la forma de leer la tarjeta pueden variar. Conviene probarla antes de entregarla.</p></article>
+      <article><h3>¿Tengo que pagar cada mes?</h3><p>No hay cuota mensual por parte de este servicio. Google e Instagram mantienen sus propias plataformas y condiciones.</p></article>
+      <article><h3>¿Puedo cambiar el enlace después?</h3><p>Depende del chip y de que la tarjeta sea reprogramable. Confirmamos esa característica en el modelo que se use.</p></article>
+      <article><h3>¿La tarjeta garantiza más reseñas?</h3><p>No. Facilita llegar a la página correcta, pero cada cliente decide si deja una reseña y qué quiere escribir.</p></article>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap foot"><a class="brand" href="#">tap<span>local.</span></a><div>Tarjetas NFC configuradas para negocios locales.</div><div>© <span id="year">2026</span> TapLocal</div></div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('.order').forEach(function(link){
+  link.addEventListener('click', function(){
+    var service = link.getAttribute('data-service') || 'Tarjetas NFC';
+    var button = document.getElementById('contactButton');
+    button.href = 'mailto:hola@tumarca.es?subject=' + encodeURIComponent('Consulta: ' + service) + '&body=' + encodeURIComponent('Hola, me interesa: ' + service + '. ¿Me podéis dar más información?');
+  });
+});
+</script>
+</body>
+</html>
